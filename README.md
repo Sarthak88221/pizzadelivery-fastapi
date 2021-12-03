@@ -3,7 +3,7 @@
 ## How to run the Project
 - Install Postgreql
 - Install Python
-- Git clone the project with 
+- Git clone the project
 - Create your virtualenv with `Pipenv` or `virtualenv` and activate it.
 - Install the requirements with ``` pip install -r requirements.txt ```
 - Set Up your PostgreSQL database and set its URI in your ```database.py```
