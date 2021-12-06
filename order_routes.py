@@ -7,7 +7,7 @@ from database import Session , engine
 from fastapi.encoders import jsonable_encoder
 
 order_router=APIRouter(
-    prefix="/orders",
+    # prefix="/orders",
     tags=['orders']
 )
 
@@ -160,7 +160,7 @@ async def get_specific_order(id:int,Authorize:AuthJWT=Depends()):
     )
 
 
-@order_router.put('/order/update/{id}/')
+@order_router.put('/order/{id}/')
 async def update_order(id:int,order:OrderModel,Authorize:AuthJWT=Depends()):
 
     try:
@@ -187,7 +187,7 @@ async def update_order(id:int,order:OrderModel,Authorize:AuthJWT=Depends()):
     return jsonable_encoder(order_to_update)
 
     
-@order_router.patch('/order/update/{id}/')
+@order_router.patch('/order/{id}/')
 async def update_order_status(id:int,
         order:OrderStatusModel,
         Authorize:AuthJWT=Depends()):
@@ -220,7 +220,7 @@ async def update_order_status(id:int,
         return jsonable_encoder(response)
 
 
-@order_router.delete('/order/delete/{id}/',status_code=status.HTTP_204_NO_CONTENT)
+@order_router.delete('/order/{id}/',status_code=status.HTTP_204_NO_CONTENT)
 async def delete_an_order(id:int,Authorize:AuthJWT=Depends()):
 
     try:
