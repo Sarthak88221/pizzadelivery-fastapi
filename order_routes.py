@@ -17,10 +17,7 @@ session=Session(bind=engine)
 @order_router.get('/')
 async def hello(Authorize:AuthJWT=Depends()):
 
-    """
-        ## A sample hello world route
-        This returns Hello world
-    """
+   
 
     try:
         Authorize.jwt_required()
